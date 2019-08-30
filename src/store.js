@@ -15,7 +15,8 @@ export default new Vuex.Store({
     },
 
     remove(state, { id }) {
-      return state.todoList.splice((id - 1), 1);
+      const newState = state.todoList.filter(e => e.id !== id);
+      return state.todoList = newState;
     },
 
     check(state, { id }) {
